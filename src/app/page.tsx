@@ -17,7 +17,7 @@ export default async function HomePage(): Promise<JSX.Element> {
 
   return (
     <main className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Daftar Pengguna</h1>
+      <h1 className="text-2xl font-bold mb-4">Daftar Pengguna Halo Helo</h1>
       <UserList users={users} />
     </main>
   );
