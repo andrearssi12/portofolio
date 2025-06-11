@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "../styles/globals.css";
-import Navbar from "@/components/ui/navbar";
 import { HeroUIProvider } from "@heroui/system";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -25,11 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className="dark">
+      <body className={inter.variable}>
         <HeroUIProvider>
-          <Navbar />
-          {children}
+          <main className="text-foreground bg-background">
+            {children}
+          </main>
         </HeroUIProvider>
       </body>
     </html>
