@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import { HeroUIProvider } from "@heroui/system";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -22,9 +24,13 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={inter.variable}>
         <HeroUIProvider>
-          <main className="text-foreground bg-background">
-            {children}
-          </main>
+          <div className="text-foreground bg-background">
+            <div className="min-h-screen bg-navy-900 text-slate-400">
+              <Navbar />
+              <main className="container mx-auto px-4 pt-24">{children}</main>
+              <Footer />
+            </div>
+          </div>
         </HeroUIProvider>
       </body>
     </html>
